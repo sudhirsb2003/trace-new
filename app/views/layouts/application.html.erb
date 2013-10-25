@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TraceMyRide</title>
+  <%= stylesheet_link_tag    "scaffolds.css.scss","gmaps4rails.css" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<% if signed_in? %>
+ <b><%= current_user.full_name %> |
+ <%= link_to 'LOGOUT', destroy_user_session_path, :method => :delete %> </b>
+<% else %>
+  <b><%= link_to 'LOGIN', new_user_session_path %> |
+  <%= link_to 'REGISTER', new_user_registration_path %></b>
+<% end %>
+<p id="notice"><%= notice %></p>
+<%= yield %>
+<%= yield :scripts %>
+</body>
+</html>

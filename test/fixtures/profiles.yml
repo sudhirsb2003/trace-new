@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  address: MyText
+  contact_no: 1
+  blood_group: MyString
+  emergency_contact_no: 1
+  family_doctor_name: MyString
+  ref_number_1: 1
+  ref_number_2: 1
+  profile_title: MyString
+
+two:
+  user_id: 1
+  address: MyText
+  contact_no: 1
+  blood_group: MyString
+  emergency_contact_no: 1
+  family_doctor_name: MyString
+  ref_number_1: 1
+  ref_number_2: 1
+  profile_title: MyString

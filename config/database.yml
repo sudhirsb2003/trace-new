@@ -1,0 +1,22 @@
+
+development:
+    adapter: postgresql
+    host: localhost
+    database: trace_my_ride_development
+    username: postgres
+    password: safew
+
+test:
+    adapter: postgresql
+    host: localhost
+    database: trace_my_ride_test
+    username: postgres
+    password: safew
+
+production:
+    adapter: postgresql
+    host: localhost
+    database: trace_my_ride_production
+    username: postgres
+    password: safew
+    reconnect: true

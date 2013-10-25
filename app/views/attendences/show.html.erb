@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @attendence.user_id %>
+</p>
+
+<p>
+  <b>Vehicle:</b>
+  <%= @attendence.vehicle_id %>
+</p>
+
+<p>
+  <b>Pick up point:</b>
+  <%= @attendence.pick_up_point_id %>
+</p>
+
+<p>
+  <b>Employee:</b>
+  <%= @attendence.employee_id %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @attendence.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_attendence_path(@attendence) %> |
+<%= link_to 'Back', attendences_path %>

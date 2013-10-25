@@ -1,0 +1,37 @@
+<style>
+#photo{
+position: absolute;
+width: auto; /*Width of frame div*/
+overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+color: green;
+padding:10px;
+border-radius:10px;
+}
+
+#detail{
+position: fixed;
+left: 400px; /*Set left value to WidthOfFrameDiv*/
+overflow: auto;
+background: #fff;
+}
+</style>
+
+<div id = "profile" style ="font-family:ubuntu;margin-top:100px;">
+<div id="photo">
+  <%= image_tag @profile.photo.url(:small) %><br>
+  <h1><%= @profile.user.full_name %></h1>
+</div>
+
+<div id ="detail">
+  <b><%= link_to "Edit", edit_profile_path(@profile) %></b>
+  <h4>Profile Title : <%= @profile.profile_title %></h4><hr>
+  Full Address : <%= @profile.address %> <hr>
+  Contact Number : <%= @profile.contact_no %> <hr>
+  Blood Group : <%= @profile.blood_group %> <hr>
+  Emergency Contact Number : <%= @profile.emergency_contact_no %> <hr>
+  Family Doctor Name : <%= @profile.family_doctor_name  %> <hr>
+  Contact Reference Number_1 : <%= @profile.ref_number_1 %> <hr>
+  Contact Reference Number_1 : <%= @profile.ref_number_2 %>
+</div>
+
+</div>

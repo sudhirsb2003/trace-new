@@ -1,0 +1,39 @@
+<h2>Sign up</h2>
+<style>
+ .signup{ border:3px solid silver; border-radius:10px;width:350px;padding:30px;margin-left:400px;}
+</style>
+<div class="signup">
+<% resource.build_profile %>
+<%= nested_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :FullName %><br />
+  <%= f.text_field :full_name, :autofocus => true %></div>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+
+  <%= f.fields_for :profile do |profile| %>
+    Upload Photo : <%= profile.file_field :photo %>
+    Address : <%= profile.text_field :address %>
+    Contact Number : <%= profile.text_field :contact_no %>
+    Blood Group : <%= profile.text_field :blood_group %>
+    Emergency Contact Number :<%= profile.text_field :emergency_contact_no %>
+    Family Doctor Name : <%= profile.text_field :family_doctor_name %>
+    First Reference Number :<%= profile.text_field :ref_number_1 %>
+    Second Reference Number : <%= profile.text_field :ref_number_2 %>
+    Select Profile Title : <%= profile.select :profile_title, Profile::TITLE %>
+  <% end %>
+
+  <div><%= f.submit "Sign up" %></div><br>
+<% end %>
+
+<b><%= render "devise/shared/links" %></b>
+</div>

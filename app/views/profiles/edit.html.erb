@@ -1,0 +1,23 @@
+<h2> Update Profile </h2>
+<%= form_for(@profile) do |profile| %>
+    Upload Photo : <br> <%= profile.file_field :photo %><br>
+
+    Address : <br> <%= profile.text_field :address %><br>
+
+    Contact Number :<br> <%= profile.text_field :contact_no %><br>
+
+    Blood Group : <br><%= profile.text_field :blood_group %><br>
+
+    Emergency Contact Number :<br><%= profile.text_field :emergency_contact_no %><br>
+
+    Family Doctor Name : <br><%= profile.text_field :family_doctor_name %><br>
+
+    First Reference Number :<br><%= profile.text_field :ref_number_1 %><br>
+
+    Second Reference Number : <br><%= profile.text_field :ref_number_2 %><br>
+
+    Select Profile Title : <br><%= profile.select :profile_title, Profile::TITLE %><br><br>
+
+  <%= profile.submit " Update " %>
+
+<% end %>

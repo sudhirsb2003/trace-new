@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Vehicle make:</b>
+  <%= @vehicle.vehicle_make %>
+</p>
+
+<p>
+  <b>Vehicle number:</b>
+  <%= @vehicle.vehicle_number %>
+</p>
+
+<p>
+  <b>Driver Name :</b>
+  <%= @vehicle.user.full_name %>
+</p>
+
+<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+<%= link_to 'Back', vehicles_path %>
+<hr>
+
+<h4> Passengers List </h4>
+<table>
+<tr>
+<% Passenger.find(:all).each do |p| %>
+ <td><%= p.user.full_name %></td></tr>
+<% end %>
+</table>
+
+<%= javascript_include_tag "jquery.tokeninput"%>
+<%= stylesheet_link_tag "token-input-facebook", "token-input"%>
+
+<h1> Add Passengers </h1>
+<%= form_for @passengers do |f| %>
+<%= f.label "Add Passenger" %><br>
+<%= text_field_tag "users","", :id =>"demo-input-facebook-theme" %><br>
+<%= f.hidden_field :vehicle_id, :value => @vehicle.id %>
+<%= f.submit "Add", :class=> "btn btn-info" %>
+<% end %>

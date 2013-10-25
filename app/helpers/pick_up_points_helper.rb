@@ -1,0 +1,2 @@
+module PickUpPointsHelper
+end
